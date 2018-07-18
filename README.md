@@ -1,1 +1,2 @@
-# paletteer
+# Paletteer
+A colour picking app.

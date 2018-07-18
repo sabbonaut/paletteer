@@ -1,0 +1,114 @@
+<!--======================================================= ||
+|| =                                                      = ||
+|| = Name: Paletteer                                      = ||
+|| = Tagline: A colour picking app.                       = ||
+|| =                                                      = ||
+|| ========================= TODO ========================= ||
+|| =                                                      = ||
+|| TODO: Switch palette from list to div elements.          ||
+|| =                                                      = ||
+|| ========================================================-->
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Paletteer</title>
+
+    <link href="open-iconic/font/css/open-iconic.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles/default.css">
+  </head>
+
+  <body>
+    <!--
+      || Subpalette preview section.
+    -->
+    <nav>
+      <!-- Subpalette navigation section. -->
+      <section id="subpalettes" class="subpalettes"></section>
+
+      <!-- Button for creating a new subpalette. -->
+      <button id="new-palette" class="new-palette">
+        <span>+</span>
+      </button>
+    </nav>
+
+    <!--
+      || Palette section.
+    -->
+    <main>
+      <div class="grid"> <!-- Vertical Grid -->
+        <!-- 
+          || Accessible buttons for adding/removing palette colours.
+         -->
+        <section class="actions">
+          <!-- Button for removing the current colour. -->
+          <button id="remove-colour" class="actions__action">
+            <span class="trash">Delete Colour</span>
+          </button>
+
+          <!-- Right section of action buttons. -->
+          <div class="actions__section--right">
+            <!-- Button for adding a new colour to the current palette. -->
+            <button id="add-colour" class="actions__action">
+              <span class="plus">+</span>
+            </button>
+          </div>
+        </section>
+
+        <!--
+          || The main palette that will be edited.
+        -->
+        <section class="colours">
+          <ul id="palette">
+            <!-- Indicator that indicates what colour is being edited. -->
+          </ul>
+          
+          <div id="indicator" class="indicator" style="left: 50%"></div>
+        </section>
+
+        <!--
+          || The editing options for the current colour in the palette.
+        -->
+        <section class="options">
+          <div id="mode-toggler" class="options__toggler">
+            <button class="active">HSL</button>
+            <button>RGB</button>
+          </div>
+
+          <!-- "Hue" label, information, and slider. -->
+          <fieldset>
+            <h3 id="option-one-label">Hue</h3>
+            <span id="option-one-value">0</span>
+            <input id="option-one-slider" type="range" min="0" max="360" class="range hue purple">
+          </fieldset>
+
+          <!-- "Saturation" label, information, and slider. -->
+          <fieldset>
+            <h3 id="option-two-label">Saturation</h3>
+            <span id="option-two-value">0</span>
+            <input id="option-two-slider" type="range" min="0" max="100" step="0.1" class="range saturation purple">
+          </fieldset>
+
+          <!-- "Light" label, information, and slider. -->
+          <fieldset>
+            <h3 id="option-three-label">Light</h3>
+            <span id="option-three-value">0</span>
+            <input id="option-three-slider" type="range" min="0" max="100" step="0.1" class="range light pink">
+          </fieldset>
+
+          <!-- Centered content. -->
+          <div class="center">
+            <!-- Button for deleting the current subpalette. -->
+            <button id="delete-subpalette">Delete Subpalette</button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script>
+      require('./assets/scripts/app.js')
+    </script>
+  </body>
+</html>

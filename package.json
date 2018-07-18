@@ -1,0 +1,20 @@
+{
+  "name": "paletteer",
+  "productName": "Paletteer",
+  "version": "0.9.1",
+  "description": "A colour picking app.",
+  "main": "source/index.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . paletteer --overwrite --platform linux --arch x64 --icon=source/icon.png --prune=true --out dist",
+    "deb64": "electron-installer-debian --src dist/paletteer-linux-x64/ --arch amd64 --config config.json"
+  },
+  "repository": "https://gitlab.com/Grimview/paletteer",
+  "keywords": [],
+  "author": "Grimview",
+  "license": "Unlicense",
+  "devDependencies": {
+    "electron": "^2.0.5",
+    "electron-packager": "^12.1.0"
+  }
+}
