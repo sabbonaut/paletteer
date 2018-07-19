@@ -3,18 +3,40 @@
   "productName": "Paletteer",
   "version": "0.9.1",
   "description": "A colour picking app.",
-  "main": "source/index.js",
+  "main": "app/index.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-packager . paletteer --overwrite --platform linux --arch x64 --icon=source/icon.png --prune=true --out dist",
-    "deb64": "electron-installer-debian --src dist/paletteer-linux-x64/ --arch amd64 --config config.json"
+    "dev": "set DEV=true && node ./node_modules/concurrently/src/main.js --kill-others \"npm start\"",
+    "postinstall": "install-app-deps",
+    "pack": "build --dir",
+    "dist": "build",
+        "dist-x": "build -ml",
+        "release": "build"
   },
-  "repository": "https://gitlab.com/Grimview/paletteer",
-  "keywords": [],
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sabbonaut/paletteer"
+  },
+  "keywords": [
+    "colour",
+    "palette",
+    "Electron"
+  ],
   "author": "Grimview",
   "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/sabbonaut/paletteer/issues"
+  },
+  "homepage": "https://github.com/sabbonaut/paletteer",
   "devDependencies": {
-    "electron": "^2.0.5",
-    "electron-packager": "^12.1.0"
+    "electron-builder": "^5.16.0",
+    "electron-prebuilt": "^1.2.0",
+    "electron-reload": "^1.0.0"
+  },
+  "dependencies": {},
+  "build": {
+    "appId": "com.grimview.paletteer",
+    "app-category-type": "public.app-category.productivity"
   }
 }

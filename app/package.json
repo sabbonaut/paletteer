@@ -1,0 +1,22 @@
+{
+  "name": "paletteer",
+  "version": "0.9.1",
+  "description": "Paletteer wrapped in Electron.",
+  "main": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sabbonaut/paletteer.git"
+  },
+  "private": true,
+  "keywords": [
+    "colour",
+    "palette"
+  ],
+  "author": "Sabastian Auth <sabastian@grimview.com>",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/sabbonaut/paletteer/issues"
+  },
+  "homepage": "https://github.com/sabbonaut/paletteer",
+  "dependencies": {}
+}
